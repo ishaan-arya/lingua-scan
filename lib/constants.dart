@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-const Color kPrimaryBlue = Color(0xff0ba8ff);
-const Color kPrimaryPurple = Color(0xffc687ff);
+const Color kPrimaryPurple = Color(0xff0ba8ff);
+const Color kPrimaryBlue = Color(0xffc687ff);
 
 const kTextFieldDecoration = InputDecoration(
-  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(15.0)),
   ),
@@ -18,8 +18,10 @@ const kTextFieldDecoration = InputDecoration(
 
 const kButtonTextStyle =
     TextStyle(fontSize: 18, fontFamily: "Poppins", color: Colors.white);
+
 const kHeadingTextStyle = TextStyle(
   fontSize: 32,
   fontFamily: "Poppins",
-  color: Colors.white, // Text color
+  color: Colors.white,
+  fontWeight: FontWeight.bold, // Text color
 );
