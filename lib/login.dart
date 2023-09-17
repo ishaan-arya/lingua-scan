@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'constants.dart';
 import 'home.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+
+class _LoginScreenState extends State<LoginScreen> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
+  // LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +69,13 @@ class LoginScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 35),
                   child: GestureDetector(
-                    onTap: () {
-                      try {
-                        Navigator.pushNamed(context, '/home');
-                      } catch (e) {
-                        print("Navigation error: $e");
-                      }
+                    onTap: () 
+                    async {
+                      Navigator.pushNamed(context, '/home');
+                      // signInWithGoogle()
+                          // .then((UserCredential user) {
+                          //  debugPrint("Hello world");
+                          // }).catchError((e) => print(e));
                     },
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40),
@@ -103,4 +115,15 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+  Future<UserCredential> signInWithGoogle() async {
+    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    final googleAuthCredential =
+          GoogleAuthProvider.credential(
+            accessToken: googleAuth?.accessToken,
+            idToken: googleAuth?.idToken,
+          );
+    return await _auth.signInWithCredential(googleAuthCredential);
+    }
 }
