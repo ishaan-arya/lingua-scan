@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '721859996873',
     projectId: 'livelearn-69eb6',
     storageBucket: 'livelearn-69eb6.appspot.com',
+    iosClientId: '721859996873-eopip54i2op2j108fiaged4jh4tc1fat.apps.googleusercontent.com',
     iosBundleId: 'com.example.testing',
   );
 }
