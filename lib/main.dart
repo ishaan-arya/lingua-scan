@@ -13,7 +13,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   // Get the list of available cameras
   final cameras = await availableCameras();
 
@@ -32,8 +31,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginScreen(),
         '/home': (context) => HomePage(),
-        '/test': (context) => Test(),
-        '/learn': (context) => Learn(cameras: cameras), // Pass cameras to Learn
+        '/test': (context) => ObjectDetectorView(),
+        '/learn': (context) =>
+            LanguageTranslatorView(), // Pass cameras to Learn
       },
       initialRoute: '/',
     );

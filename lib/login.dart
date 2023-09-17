@@ -10,7 +10,6 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-
 class _LoginScreenState extends State<LoginScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -36,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("LingoSnap", style: kHeadingTextStyle),
+                Text("LinguaScan", style: kHeadingTextStyle),
                 SizedBox(
                   height: 50,
                 ),
@@ -69,13 +68,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 35),
                   child: GestureDetector(
-                    onTap: () 
-                    async {
+                    onTap: () async {
                       Navigator.pushNamed(context, '/home');
                       // signInWithGoogle()
-                          // .then((UserCredential user) {
-                          //  debugPrint("Hello world");
-                          // }).catchError((e) => print(e));
+                      // .then((UserCredential user) {
+                      //  debugPrint("Hello world");
+                      // }).catchError((e) => print(e));
                     },
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40),
@@ -118,12 +116,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<UserCredential> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-    final googleAuthCredential =
-          GoogleAuthProvider.credential(
-            accessToken: googleAuth?.accessToken,
-            idToken: googleAuth?.idToken,
-          );
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+    final googleAuthCredential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
     return await _auth.signInWithCredential(googleAuthCredential);
-    }
+  }
 }

@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 30, top: 80),
                   child: Text(
-                    "Hola, Lorem",
+                    "Hola!",
                     style: kHeadingTextStyle,
                   ),
                 ),
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                         shadowColor: Colors.black.withOpacity(0.5),
                         child: Padding(
-                          padding: EdgeInsets.only(top: 30, left: 45),
+                          padding: EdgeInsets.only(top: 45, left: 45),
                           child: Text(
                             "🇪🇸",
                             style: TextStyle(fontSize: 50),
@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                         shadowColor: Colors.black.withOpacity(0.5),
                         child: Padding(
-                          padding: EdgeInsets.only(top: 30, left: 45),
+                          padding: EdgeInsets.only(top: 45, left: 45),
                           child: Text(
                             "🇯🇵",
                             style: TextStyle(fontSize: 50),
@@ -126,7 +126,7 @@ class HomePage extends StatelessWidget {
                       shadowColor: Colors.black.withOpacity(0.5),
                       child: Center(
                         child: Text(
-                          "Learn",
+                          "Lingua",
                           style: kHeadingTextStyle.copyWith(
                             fontSize: 25,
                             color: kPrimaryGrey,
@@ -165,7 +165,7 @@ class HomePage extends StatelessWidget {
                       shadowColor: Colors.black.withOpacity(0.5),
                       child: Center(
                         child: Text(
-                          "Test",
+                          "Scan",
                           style: kHeadingTextStyle.copyWith(
                               fontSize: 25, color: kPrimaryGrey),
                         ),
