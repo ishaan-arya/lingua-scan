@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,6 +43,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDTU9wXSmiuMIJP7cdC_OG8lZRDVicgxtA',
+    appId: '1:721859996873:web:e4fc70f9eb8ad18578f118',
+    messagingSenderId: '721859996873',
+    projectId: 'livelearn-69eb6',
+    authDomain: 'livelearn-69eb6.firebaseapp.com',
+    storageBucket: 'livelearn-69eb6.appspot.com',
+    measurementId: 'G-M8RDHZQ3KV',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyANwD_GuUSnKKaato5dbjn1Gq-r0gpMxS8',
     appId: '1:721859996873:android:fee5f6faaa160d2278f118',
@@ -63,6 +67,17 @@ class DefaultFirebaseOptions {
     messagingSenderId: '721859996873',
     projectId: 'livelearn-69eb6',
     storageBucket: 'livelearn-69eb6.appspot.com',
+    iosClientId: '721859996873-eopip54i2op2j108fiaged4jh4tc1fat.apps.googleusercontent.com',
     iosBundleId: 'com.example.testing',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCktlDRmQvQO1gusXpf7FU5wW_YRQ2w6Z4',
+    appId: '1:721859996873:ios:c0a4f33cabd0035678f118',
+    messagingSenderId: '721859996873',
+    projectId: 'livelearn-69eb6',
+    storageBucket: 'livelearn-69eb6.appspot.com',
+    iosClientId: '721859996873-hvtrou2r6fq67k2eprha4ivodjj846f8.apps.googleusercontent.com',
+    iosBundleId: 'com.example.testing.RunnerTests',
   );
 }
