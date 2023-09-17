@@ -1,41 +1,41 @@
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'login.dart';
+import 'home.dart';
+import 'test.dart';
+import 'learn.dart';
+import 'package:camera/camera.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize Firebase
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Get the list of available cameras
+  final cameras = await availableCameras();
+
+  // Run App
+  runApp(MyApp(cameras: cameras));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final List<CameraDescription> cameras; // List of available cameras
 
-  // This widget is the root of your application.
+  MyApp({required this.cameras});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment(0.8, 1),
-
-          colors: <Color>[
-            Color(0xff62DCFA),
-            Color(0xff43CAE2),
-            Color(0xff1894B3),
-            Color(0xff11171C),
-          ], // Gradient from https://learnui.design/tools/gradient-generator.html
-          tileMode: TileMode.mirror,
-        ),
-      ),
-      child: Column(children: [
-        Text(
-          "Hello",
-          style: TextStyle(
-              color: Colors.white, // Set text color to white
-              fontWeight: FontWeight.bold,
-              fontSize: 32 // Set text to bold
-              ),
-        ),
-      ]),
-    ));
+      routes: {
+        '/': (context) => LoginScreen(),
+        '/home': (context) => HomePage(),
+        '/test': (context) => Test(),
+        '/learn': (context) => Learn(cameras: cameras), // Pass cameras to Learn
+      },
+      initialRoute: '/',
+    );
   }
 }

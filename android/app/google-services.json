@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "721859996873",
+    "project_id": "livelearn-69eb6",
+    "storage_bucket": "livelearn-69eb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721859996873:android:fee5f6faaa160d2278f118",
+        "android_client_info": {
+          "package_name": "com.example.testing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721859996873-p0fmjov6t090bu25c610kvn5batkunj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANwD_GuUSnKKaato5dbjn1Gq-r0gpMxS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721859996873-p0fmjov6t090bu25c610kvn5batkunj3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "721859996873-eopip54i2op2j108fiaged4jh4tc1fat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.testing"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
