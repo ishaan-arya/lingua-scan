@@ -39,6 +39,8 @@ dependencies:
   firebase_core: ^2.15.1
   glassmorphism_buttons: ^0.0.8
   glassmorphism_ui: ^0.3.0
+  cloud_firestore: ^4.9.1
+
 
 dev_dependencies:
   flutter_test:
