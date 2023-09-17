@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 import 'dart:ui' as ui;
 
+import 'home.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
@@ -213,7 +214,9 @@ class _ObjectDetectorView extends State<ObjectDetectorView> {
   Future<void> showLabelDialog(BuildContext context) async {
     final onDeviceTranslator = OnDeviceTranslator(
       sourceLanguage: TranslateLanguage.english,
-      targetLanguage: TranslateLanguage.spanish,
+      targetLanguage: language == 'es'
+          ? TranslateLanguage.spanish
+          : TranslateLanguage.japanese,
     );
 
     final String response =
@@ -223,7 +226,7 @@ class _ObjectDetectorView extends State<ObjectDetectorView> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Spanish Translation:'),
+          title: Text('Translation:'),
           content: Text(response),
           actions: [
             TextButton(
