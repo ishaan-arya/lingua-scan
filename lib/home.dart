@@ -4,6 +4,8 @@ import 'learn.dart';
 import 'test.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 
+String language = 'es';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -62,12 +64,17 @@ class HomePage extends StatelessWidget {
                         shadowStrength: 8,
                         borderRadius: BorderRadius.circular(16),
                         shadowColor: Colors.black.withOpacity(0.5),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 45, left: 45),
-                          child: Text(
-                            "🇪🇸",
-                            style: TextStyle(fontSize: 50),
+                        child: GestureDetector(
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 45, left: 45),
+                            child: Text(
+                              "🇪🇸",
+                              style: TextStyle(fontSize: 50),
+                            ),
                           ),
+                          onTap: () {
+                            language = 'es';
+                          },
                         ),
                       ),
                       SizedBox(
@@ -91,12 +98,17 @@ class HomePage extends StatelessWidget {
                         shadowStrength: 8,
                         borderRadius: BorderRadius.circular(16),
                         shadowColor: Colors.black.withOpacity(0.5),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 45, left: 45),
-                          child: Text(
-                            "🇯🇵",
-                            style: TextStyle(fontSize: 50),
+                        child: GestureDetector(
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 45, left: 45),
+                            child: Text(
+                              "🇯🇵",
+                              style: TextStyle(fontSize: 50),
+                            ),
                           ),
+                          onTap: () {
+                            language = 'jp';
+                          },
                         ),
                       ),
                     ],
