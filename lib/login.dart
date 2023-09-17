@@ -3,6 +3,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'constants.dart';
 import 'home.dart';
+import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -24,8 +25,8 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: <Color>[
-                kPrimaryBlue,
                 kPrimaryPurple,
+                kPrimaryBlue,
               ], // Change colors as needed
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -35,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("[Insert App Name]", style: kHeadingTextStyle),
+                Text("LingoSnap", style: kHeadingTextStyle),
                 SizedBox(
                   height: 50,
                 ),
@@ -76,14 +77,33 @@ class _LoginScreenState extends State<LoginScreen> {
                           //  debugPrint("Hello world");
                           // }).catchError((e) => print(e));
                     },
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Color(0xff514D4D),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Text("Sign In", style: kButtonTextStyle),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 40),
+                      child: GlassContainer(
+                        height: 65,
+
+                        blur: 8,
+                        color: Colors.white.withOpacity(1),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Colors.white.withOpacity(0.5),
+                            Colors.blue.withOpacity(0.6),
+                          ],
+                        ),
+                        //--code to remove border
+                        border: Border.fromBorderSide(BorderSide.none),
+                        shadowStrength: 8,
+                        borderRadius: BorderRadius.circular(16),
+                        shadowColor: Colors.black.withOpacity(0.5),
+                        child: Center(
+                          child: Text(
+                            "Log In",
+                            style: kHeadingTextStyle.copyWith(
+                                fontSize: 20, color: kPrimaryGrey),
+                          ),
+                        ),
                       ),
                     ),
                   ),
