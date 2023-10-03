@@ -1,16 +1,7 @@
-# testing
+# LinguaScan
 
-A new Flutter project.
+A computer vision powered language learning app built for HackMIT 2023
 
-## Getting Started
+Here's a quick demo of our app:
+https://github.com/ishaan-arya/lingua-scan/assets/66945981/ff2792a8-1f40-4022-811d-efb01759e89f
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
